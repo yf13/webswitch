@@ -26,9 +26,8 @@ Then the WebSwitch **plug** should be started on proper intranet host so that it
 the **hub** and the intranet web site. Once started, the **plug** will connect to the **hub** to
 advertise the sites to be published.
 
-Once the intranet site is plugged into the **hub**, visitors can access the DNS based URL of the
-published sites --- these DNS hosts will all point to the **hub** and it will then forward the 
-visitor requests to plugs and to the final intranet sites as shown in this [diagram](./how-it-works.png): 
+Then visitors can access the DNS the sites which will all point to the **hub**. Then it forwards  
+visitors' requests to intranet sites through the **plugs** as shown in this [diagram](./how-it-works.png): 
 
 
 Installation 
