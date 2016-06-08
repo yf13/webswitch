@@ -19,23 +19,30 @@ The **plug**:
 How it works
 -------------
 
-Once the intranet site is plugged into the **hub**, they can be accessed like normal Internet web sites as shown in below diagram: 
+Once the intranet site is plugged into the **hub**, they can be accessed like normal Internet web sites as shown in below [diagram](./how-it-works.png): 
 
 ```sequence
-participant Internet\nvisitor as Visitor
-participant WebSwitch\n Hub as Hub
-participant WebSwitch\nPlug as Plug 
-participant Intranet\nsite as Site
-note left of Hub: opening\nchannels
-Plug->Hub: open
-Hub->Plug: plug channel
-note right of Visitor: serving\nvisitors
+
+@startuml
+hide footbox
+actor "Internet\n Visitor" as Visitor
+participant "WebSwitch\n Hub" as Hub
+participant "WebSwitch\n Plug" as Plug 
+actor "Intranet\n Site" as Site
+group Plugging in web sites
+Plug->Hub: new plug
+Hub->Plug: plug channel established
+end
+loop Serving visitors
 Visitor->Hub: web request
 Hub-->Plug: forwarded request
 Plug->Site: web request
 Site->Plug: web response
 Plug-->Hub: forwarded response
 Hub->Visitor: web response
+end
+@enduml
+
 ```
 
 Installation 
