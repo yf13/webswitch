@@ -8,7 +8,7 @@ import (
 	"io"
 	"log"
 	"net/http"
-	"webswitch"
+	"github.com/yf13/webswitch"
 )
 
 // Client http request handler routine

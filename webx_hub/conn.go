@@ -11,7 +11,7 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-	"webswitch"
+	"github.com/yf13/webswitch"
 )
 
 // ProxyConn represents the websocket w/ a backend plug proxy

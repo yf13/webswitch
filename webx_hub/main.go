@@ -9,7 +9,7 @@ import (
 	"log"
 	"net/http"
 	"strings"
-	"webswitch"
+	"github.com/yf13/webswitch"
 )
 
 // version of frontend switch

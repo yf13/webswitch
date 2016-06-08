@@ -17,7 +17,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	"webswitch"
+	"github.com/yf13/webswitch"
 )
 
 // const

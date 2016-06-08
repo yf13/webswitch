@@ -10,7 +10,7 @@ import (
 	"math"
 	"net/http"
 	"strconv"
-	"webswitch"
+	"github.com/yf13/webswitch"
 )
 
 // a plug entry with a use count. Note this count is different from the one

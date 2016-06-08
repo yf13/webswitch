@@ -8,7 +8,7 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-	"webswitch"
+	"github.com/yf13/webswitch"
 )
 
 // enum of hub command codes
