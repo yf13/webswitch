@@ -19,31 +19,17 @@ The **plug**:
 How it works
 -------------
 
-Once the intranet site is plugged into the **hub**, they can be accessed like normal Internet web sites as shown in below [diagram](./how-it-works.png): 
+The WebSwitch **hub** should be running as a web server on an Internet host so that both visitors 
+and plugs can reach it at any time. 
 
-```sequence
+Then the WebSwitch **plug** should be started on proper intranet host so that it can access both
+the **hub** and the intranet web site. Once started, the **plug** will connect to the **hub** to
+advertise the sites to be published.
 
-@startuml
-hide footbox
-actor "Internet\n Visitor" as Visitor
-participant "WebSwitch\n Hub" as Hub
-participant "WebSwitch\n Plug" as Plug 
-actor "Intranet\n Site" as Site
-group Plugging in web sites
-Plug->Hub: new plug
-Hub->Plug: plug channel established
-end
-loop Serving visitors
-Visitor->Hub: web request
-Hub-->Plug: forwarded request
-Plug->Site: web request
-Site->Plug: web response
-Plug-->Hub: forwarded response
-Hub->Visitor: web response
-end
-@enduml
+Once the intranet site is plugged into the **hub**, visitors can access the DNS based URL of the
+published sites --- these DNS hosts will all point to the **hub** and it will then forward the 
+visitor requests to plugs and to the final intranet sites as shown in this [diagram](./how-it-works.png): 
 
-```
 
 Installation 
 -------------
