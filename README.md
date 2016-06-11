@@ -35,6 +35,13 @@ Installation
 WebSwitch is written in [Go](http://golang.org) programming language, thus you can install it from source with:
 
 	go get github.com/yf13/webswitch
+   cd $GOPATH/github.com/yf13/webswtich/webx_plug; go install
+   cd $GOPATH/github.com/yf13/webswitch/webx_hub; go install
+
+The output executable binaries can be found at $GOPATH/bin, such as 
+   $ ls -l $GOPATH/bin/webx_*
+   -rwxr-xr-x 1 u u 7214992 Jun 11 19:35 /home/u/go/bin/webx_hub*
+   -rwxr-xr-x 1 u u 7198424 Jun 11 19:35 /home/u/go/bin/webx_plug*
 
 Note that current version also requires [WebSocket] (https://github.com/gorilla/websocket).
 
