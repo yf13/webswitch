@@ -49,8 +49,8 @@ The output executable binaries can be found at $GOPATH/bin, such as
 
    ```
    $ ls -l $GOPATH/bin/webx
-   -rwxr-xr-x 1 u u 7214992 Jun 11 19:35 /home/u/go/bin/webx_hub*
-   -rwxr-xr-x 1 u u 7198424 Jun 11 19:35 /home/u/go/bin/webx_plug*
+   -rwxr-xr-x 1 u u 7214992 Jun 11 19:35 /home/user/go/bin/webx_hub*
+   -rwxr-xr-x 1 u u 7198424 Jun 11 19:35 /home/user/go/bin/webx_plug*
    ```
 
 Note that current version also requires [WebSocket] (https://github.com/gorilla/websocket).
