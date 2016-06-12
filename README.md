@@ -67,12 +67,13 @@ Usage
 - On the intranet where intranet site listens at localhost:8080, start the **plug** using:
 
 ```
-   webx_plug -hub ws://www.example.com:8081/_webx -hosts www.example.com:8080 -rhosts http://localhost:808
+   webx_plug -hub ws://www.example.com:8081/_webx -hosts www.example.com:8080 -rhosts http://localhost:8080
 
 ```
 
-Then from a client host which can resolve hostname www.example.com correctly try use a browser or cURL tool to access http://www.example.com. Sicne the original intranet site is only accessible to its localhost, thus it can't be reached from the client host originally, but with webswitch, it can be accessed.
+Then from a client host use a browser or cURL tool to access http://www.example.com.
 
+Note that Since the original intranet site is only accessible on the intranet server since it listens on ocalhost only, it can't be reached from the client host directly. However with webswitch, the site can still be published if a proper **plug** is running.
 
 Options
 --------
