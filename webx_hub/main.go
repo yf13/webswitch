@@ -6,10 +6,10 @@ package main
 
 import (
 	"flag"
+	"github.com/yf13/webswitch"
 	"log"
 	"net/http"
 	"strings"
-	"github.com/yf13/webswitch"
 )
 
 // version of frontend switch
@@ -17,13 +17,13 @@ const APP_VERSION = "0.1"
 
 // command line options
 var (
-	cert_file  = flag.String("cert", "", "public cert file (.pem) w/ CA and SANs")
-	key_file   = flag.String("key", "", "private key file (.pem)")
-	hub_path   = flag.String("path", webswitch.HUB_RESOURCE_NAME, "hub resource path.")
-	http_port  = flag.String("http", ":8080", "comma separated ports for http clients.")
-	https_port = flag.String("https", ":8443", "comma separated ports for https clients.")
-	plug_port  = flag.String("plug", ":8081", "port for plugs.")
-	auth_plugs = flag.Bool("auth", false, "whether to challenge plugs")
+	cert_file   = flag.String("cert", "", "public cert file (.pem) w/ CA and SANs")
+	key_file    = flag.String("key", "", "private key file (.pem)")
+	hub_path    = flag.String("path", webswitch.HUB_RESOURCE_NAME, "hub resource path.")
+	http_ports  = flag.String("http_ports", ":8080", "comma separated ports for http clients.")
+	https_ports = flag.String("https_ports", ":8443", "comma separated ports for https clients.")
+	plug_port   = flag.String("plug", ":8081", "port for plugs.")
+	//auth_plugs  = flag.Bool("auth", false, "whether to challenge plugs")
 )
 
 // program entrance
@@ -40,8 +40,8 @@ func main() {
 
 	// start client listeners with default server mux
 	http.HandleFunc("/", handleClient)
-	if len(*http_port) > 0 {
-		for _, port := range strings.Split(*http_port, ",") {
+	if len(*http_ports) > 0 {
+		for _, port := range strings.Split(*http_ports, ",") {
 			log.Println("http port: ", port)
 			go func() {
 				log.Fatal(
@@ -49,8 +49,8 @@ func main() {
 			}()
 		}
 	}
-	if secured && len(*https_port) > 0 {
-		for _, port := range strings.Split(*https_port, ",") {
+	if secured && len(*https_ports) > 0 {
+		for _, port := range strings.Split(*https_ports, ",") {
 			log.Println("https port: ", port)
 			go func() {
 				log.Fatal(

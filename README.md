@@ -58,9 +58,47 @@ Note that current version also requires [WebSocket] (https://github.com/gorilla/
 Usage
 ---------
 
+The **hub** program accepts the following options:
 
+```
+  -cert string
+      public cert file (.pem) w/ CA and SANs
+  -http_ports string
+      comma separated ports for http clients. (default ":8080")
+  -https_ports string
+      comma separated ports for https clients. (default ":8443")
+  -key string
+      private key file (.pem)
+  -path string
+      hub resource path. (default "/_webx")
+  -plug string
+      port for plugs. (default ":8081")
+```
+
+The **plug** program accepts the following options:
+
+```
+  -ca string
+      root CA pem: ca.crt
+  -cert string
+      plug public signed cert.crt.
+  -hosts string
+      comma separated virtual hosts (e.g. 'ibm.com:8080,hp.com')
+  -hub string
+      hub's URL to plug into. (e.g. wss://hub:8443/_webx)
+  -key string
+      plug private key.pem.
+  -limit int
+      size limit, 0 is unlimited.
+  -retry int
+      redial waiting seconds (default 60)
+  -rhosts string
+      comma separated corresponding real hosts (e.g. 'http://localhost:8081,http://localhost:8082')
+```
 
 Use "-h" option to learn the command line options for webx_hub and webx_plug programs.
+
+
 
 
 Limitations

@@ -10,6 +10,7 @@ import (
 	"crypto/x509"
 	"flag"
 	"github.com/gorilla/websocket"
+	"github.com/yf13/webswitch"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -17,7 +18,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	"github.com/yf13/webswitch"
 )
 
 // const
@@ -28,14 +28,14 @@ const (
 
 // command line options
 var (
-	fe_url     = flag.String("hub", "", "hub's URL to plug into.")
+	fe_url     = flag.String("hub", "", "hub's URL to plug into. (e.g. wss://hub:8443/_webx)")
 	limit      = flag.Int64("limit", 0, "size limit, 0 is unlimited.")
 	key_file   = flag.String("key", "", "plug private key.pem.")
 	cert_file  = flag.String("cert", "", "plug public signed cert.crt.")
 	ca_file    = flag.String("ca", "", "root CA pem: ca.crt")
 	retry_wait = flag.Int("retry", 60, "redial waiting seconds")
-	vhosts     = flag.String("hosts", "", "virtual hosts splitted by ','")
-	rhosts     = flag.String("rhosts", "", "comma separated real hosts matching vhosts")
+	vhosts     = flag.String("hosts", "", "comma separated virtual hosts (e.g. 'ibm.com:8080,hp.com')")
+	rhosts     = flag.String("rhosts", "", "comma separated corresponding real hosts (e.g. 'http://localhost:8081,http://localhost:8082')")
 	//feLinks=flag.String("links", "0:1", "list of link limit(KB):number, ...")
 )
 
