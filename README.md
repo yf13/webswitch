@@ -55,7 +55,7 @@ The output executable binaries can be found at $GOPATH/bin, such as
 
 Note that current version also requires [WebSocket] (https://github.com/gorilla/websocket).
 
-Usage
+Simple Usage
 ---------
 
 - On the public server pointed by www.example.com, start the **hub** like:
@@ -73,9 +73,14 @@ Usage
 
 Then from a client host use a browser or cURL tool to access http://www.example.com:8080.
 
-Note that Since the original intranet site is only accessible on the intranet server since it listens on ocalhost only, it can't be reached from the client host directly. However with webswitch, the site can still be published if a proper **plug** is running.
+Note that since the intranet site listens on localhost only, it can't be reached from the client host directly. However with webswitch, the site can still be published on the **hub** as shown above.
 
-Options
+Serious Usage
+-------------
+
+For serious usage, secured plug connections may be preferred based on your network toplogy. proper certificates should be supplied to both programs, see coomand  options for more details.
+
+Command Options
 --------
 
 The **hub** program accepts the following options:
