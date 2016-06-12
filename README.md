@@ -26,7 +26,8 @@ Then the WebSwitch **plug** should be started on proper intranet host so that it
 the **hub** and the intranet web site. Once started, the **plug** will connect to the **hub** to
 advertise the sites to be published.
 
-Then visitors can access the DNS the sites which will all point to the **hub**. The **hub** will forward visitors' requests to intranet sites through the **plugs** as shown in this ![diagram](/how-it-works.png). 
+Then visitors can access the DNS the sites which will all point to the **hub**. The **hub** will forward visitors' requests to intranet sites through the **plugs** as shown in this diagram.
+![how-it-works](/how-it-works.png). 
 
 
 Installation 
@@ -73,7 +74,7 @@ Simple Usage
 
 Then from a client host use a browser or cURL tool to access http://www.example.com:8080.
 
-Note that since the intranet site listens on localhost only, it can't be reached from the client host directly. However with webswitch, the site can still be published on the **hub** as shown above.
+Note that since the intranet site listens on localhost only, it can't be reached from the client host directly. However with WebSwitch, the site can be accessed after publishing on the **hub**..
 
 Serious Usage
 -------------
